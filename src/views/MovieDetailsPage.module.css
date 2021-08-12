@@ -1,0 +1,19 @@
+ul {
+	margin: 0;
+	padding: 0;
+}
+.genres {
+	list-style: none;
+	display: inline-flex;
+}
+.genres:not(:last-child) {
+	margin-right: 25px;
+}
+.linkDetals {
+	font-weight: 700;
+	text-decoration: none;
+	color: blue;
+}
+.linkDetals:not(:last-child) {
+	margin-right: 15px;
+}

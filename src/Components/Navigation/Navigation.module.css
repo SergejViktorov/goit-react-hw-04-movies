@@ -1,0 +1,19 @@
+.navigation {
+	padding: 18px 30px;
+	border-bottom: 1px gray;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.link {
+	font-size: 22px;
+	line-height: 1.5;
+	font-weight: 700;
+	text-decoration: none;
+	color: black;
+}
+.link:not(:last-child) {
+	margin-right: 15px;
+}
+
+.activeLink {
+	color: red;
+}
