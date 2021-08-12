@@ -15,9 +15,6 @@ export default function Movie() {
 
 	const onSubmitSearch = (value) => {
 		setSearch(value)
-		console.log('value', value)
-		console.log('location', location)
-		console.log('history', history)
 	}
 
 	useEffect(() => {
@@ -39,7 +36,6 @@ export default function Movie() {
 		fetch()
 	}, [search])
 
-	console.log('location', location)
 
 	return (
 		<Container>

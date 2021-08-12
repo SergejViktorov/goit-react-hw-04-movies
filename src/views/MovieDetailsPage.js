@@ -28,9 +28,6 @@ export default function MovieDetailsPage() {
 	const [film, setFilm] = useState([])
 	const filmGenres = film.genres
 
-	console.log('location', location)
-	console.log('history', history)
-
 	useEffect(() => {
 		async function fetch() {
 			const thisFilm = await functionMovieDetails(movieId)

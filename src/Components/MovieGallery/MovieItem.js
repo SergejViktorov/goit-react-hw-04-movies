@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 const MovieItem = ({ original_title, id }) => {
 	const location = useLocation()
 
-	console.log('MovieItem', location)
 	return (
 		<li key={id}>
 			<Link

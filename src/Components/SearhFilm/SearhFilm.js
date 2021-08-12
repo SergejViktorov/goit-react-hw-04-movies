@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import PropTypes from 'prop-types'
+import s from './SearchFilm.module.css'
 
 export default function SearhFilm({ onSubmit }) {
 	const [value, setValue] = useState('')
@@ -22,7 +23,7 @@ export default function SearhFilm({ onSubmit }) {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className={s.form}>
 			<input
 				type="text"
 				autocomplete="off"
@@ -30,6 +31,7 @@ export default function SearhFilm({ onSubmit }) {
 				placeholder="Get movie"
 				value={value}
 				onChange={handleSearchInput}
+				className={s.input}
 			></input>
 			<button type="submit">
 				<span>Search</span>

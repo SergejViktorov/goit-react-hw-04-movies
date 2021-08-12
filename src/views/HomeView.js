@@ -9,7 +9,6 @@ export default function HomeView() {
 		async function fetch() {
 			const traidingMove = await fetchTrending()
 			setMove((prevState) => [...prevState, ...traidingMove.data.results])
-			console.log(move)
 		}
 		fetch()
 	}, [])
