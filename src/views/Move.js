@@ -10,32 +10,23 @@ export default function Movie() {
 	const [searchFilms, setSearchFilms] = useState([])
 	const location = useLocation()
 	const history = useHistory()
-
-	const sortOrder = location.search
+	const searchOrder = new URLSearchParams(location.search).get('query') ?? ''
 
 	const onSubmitSearch = (value) => {
 		setSearch(value)
+		history.push({ ...location, search: `?query=${value}` })
 	}
 
 	useEffect(() => {
-		if (search === '') {
-			return
-		}
-		if (search) {
-			history.push({
-				...location,
-				search: `?query=${search}`,
-			})
-		}
-
 		async function fetch() {
-			const film = await functionSearchMovies(search)
+			const film = await functionSearchMovies(
+				search === '' ? searchOrder : search
+			)
 			setSearchFilms(film.data.results)
 		}
 
 		fetch()
-	}, [search])
-
+	}, [search, searchOrder])
 
 	return (
 		<Container>

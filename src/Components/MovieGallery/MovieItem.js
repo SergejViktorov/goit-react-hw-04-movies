@@ -9,7 +9,9 @@ const MovieItem = ({ original_title, id }) => {
 			<Link
 				to={{
 					pathname: `/movies/${id}`,
-					state: { from: location },
+					state: {
+						from: location,
+					},
 				}}
 			>
 				{original_title}

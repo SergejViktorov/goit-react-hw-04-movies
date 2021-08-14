@@ -21,6 +21,8 @@ const Reviews = lazy(() =>
 export default function MovieDetailsPage() {
 	const location = useLocation()
 	const history = useHistory()
+	console.log('MovieDetailsPageLocation', location)
+	console.log('MovieDetailsPageHistory', history)
 
 	const { url } = useRouteMatch()
 
@@ -37,14 +39,14 @@ export default function MovieDetailsPage() {
 	}, [movieId])
 
 	const onGoBack = () => {
-		// history.push(location?.state?.from ?? '/')
-		history.goBack()
+		history.push(location?.state?.from ?? '/')
+		// history.goBack()
 	}
 
 	return (
 		<>
 			<button type="button" onClick={onGoBack}>
-				back
+				"Back"
 			</button>
 			<hr />
 			<img
@@ -79,7 +81,9 @@ export default function MovieDetailsPage() {
 					className={s.linkDetals}
 					to={{
 						pathname: `${url}/cast`,
-						state: { from: location },
+						state: {
+							from: location.state.from,
+						},
 					}}
 				>
 					Cast
@@ -88,7 +92,9 @@ export default function MovieDetailsPage() {
 					className={s.linkDetals}
 					to={{
 						pathname: `${url}/reviews`,
-						state: { from: location },
+						state: {
+							from: location.state.from,
+						},
 					}}
 				>
 					Reviews
